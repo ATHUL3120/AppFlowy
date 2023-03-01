@@ -3,10 +3,35 @@
 
 
 #### database
-                    
+ ```mermaid
+classDiagram
+     MyClass --|> AnotherClass : contains
+    class User {
+        + int id
+        + String name
+        + String email
+        + List<Post> posts
+        + List<Post> posts
+    }
 
+    class Post {
+        + int id
+        + String title
+        + String body
+        + User user
+        + List<Comment> comments
+    }
 
- ###
+    class Comment {
+        + int id
+        + String text
+        + User user
+        + Post post
+    }
+
+    User "id" <--> "gid" Post
+    Post "1" <--> "*" Comment
+ ```                   
 
 ```mermaid
   graph LR;
@@ -25,8 +50,10 @@
     OpDate: String<br>
     Opening: int<br>
     status: String<br>
-    moredetails: String<br>
-     ")]:::a
+    moredetails: {<br>
+      'id'  <br>
+    }<br>
+     ")]
     accountGroup[("
     <b>accountGroup</b><br>
     id: int<br>
@@ -37,7 +64,7 @@
     <br>
     
     Description: String<br>
-     ")]:::b
+     ")]
     accountGroupMain[("
     <b>accountGroupMain</b><br>
     id: int<br>
@@ -48,17 +75,35 @@
     <br>
     
     Description: String<br>
-     ")]:::c
-     classDef a fill:#f65
-     classDef b fill:#f95
-     classDef c fill:#f95
+     ")]
+     style accounts fill:#f65,stroke:#123,stroke-width:2;
+     style accountGroup fill:#f95
+     style accountGroupMain fill:#f95
+
 accounts<--Group--gid-->accountGroup
 accounts<--subGroup--id-->accountGroup
-accounts<-.->accountGroup
 accountGroup<--gid--id-->accountGroupMain
 ```
 
 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 ```mermaid
   classDiagram
     direction LR
