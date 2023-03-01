@@ -34,7 +34,8 @@ Content Cell  | Content Cell
 
 ```
 
-```classDiagram
+```mermaid
+classDiagram
     class ACCOUNT {
         Id INT(11)
         Name VARCHAR(50)
