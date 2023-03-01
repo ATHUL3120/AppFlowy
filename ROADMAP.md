@@ -1,3 +1,84 @@
-## Our [roadmap](https://github.com/orgs/AppFlowy-IO/projects/5/views/12) is where you can learn about the features we’re working on, their status, when we expect to release them, and how you can help us. 
+# Finance Section
 
-## Find more information about how to use our official AppFlowy public roadmap on [Gitbook](https://appflowy.gitbook.io/docs/essential-documentation/roadmap).
+
+
+#### database
+                    
+#####accounts
+DataType  | Variable Name
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
+ - accounts
+ - accgroups
+ - accgroupmain
+
+ ###
+
+
+```erDiagram
+    ACCOUNT {
+        Id INT(11) PK
+        Name VARCHAR(50)
+        GroupId INT(11) FK
+        SubGroupId INT(11) FK
+    }
+    ACCOUNTGROUP {
+        Id INT(11) PK
+        Name VARCHAR(50)
+    }
+    ACCOUNTGROUPMAIN {
+        Id INT(11) PK
+        Name VARCHAR(50)
+    }
+
+```
+
+```classDiagram
+    class ACCOUNT {
+        Id INT(11)
+        Name VARCHAR(50)
+        GroupId INT(11)
+        SubGroupId INT(11)
+    }
+    class ACCOUNTGROUP {
+        Id INT(11)
+        Name VARCHAR(50)
+    }
+    class ACCOUNTGROUPMAIN {
+        Id INT(11)
+        Name VARCHAR(50)
+    }
+```
+
+```flow
+st=>start: Start s
+inp=>start: Start s
+sts=>start: Start s
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+e=>end
+
+st->sts->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
+
+```classDiagram
+    class Animal {
+        +String name
+        +void eat()
+    }
+    class Dog {
+        -int age
+        +void bark()
+    }
+    class Cat {
+        -int age
+        +void meow()
+    }
+
+    Animal <|-- Dog
+    Animal <|-- Cat
+```
