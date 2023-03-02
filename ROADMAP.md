@@ -1,6 +1,40 @@
 # Finance Section
 
-
+```mermaid
+classDiagram
+    direction RL
+     class Class01
+    class Class02
+    callback Class01 "callbackFunction" "Callback tooltip"
+    link Class02 "https://www.github.com" "This is a link"
+    class Class03
+    class Class04
+    click Class03 call callbackFunction() "Callback tooltip"
+    click Class04 href "https://www.github.com" "This is a link"
+    class Shape
+    callback Shape "callbackFunction" "This is a tooltip for a callback"
+    class AccountListViewProvider {
+        + List<Accounts> accountList
+        + Map<int,AccountGroup> accountGroupList
+        + bool isUpdate
+        + String searchFromUI
+        + init()
+        + onSearch()
+        + onAdd()
+        + onUpdate()
+        + onDelete()
+    }
+    class AccountAddViewProvider {
+        + List<Accounts> accountList
+        + bool isUpdate
+        + String searchFromUI
+        + onSearch()
+        + onAdd()
+        + onUpdate()
+        + onDelete()
+    }
+    AccountListViewProvider <--> AccountAddViewProvider
+```
 
 #### database
  ```mermaid
